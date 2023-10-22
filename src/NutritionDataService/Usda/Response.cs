@@ -1,16 +1,32 @@
-﻿namespace Usda.Response;
-public class Rootobject
+﻿using System.Text.Json.Serialization;
+
+namespace Usda.Response;
+public class RootObject
 {
-    public int totalHits { get; set; }
-    public int currentPage { get; set; }
-    public int totalPages { get; set; }
-    public int[] pageList { get; set; }
-    public Foodsearchcriteria foodSearchCriteria { get; set; }
-    public Food[] foods { get; set; }
-    public Aggregations aggregations { get; set; }
+    [JsonPropertyName("totalHits")]
+    public int TotalHits { get; set; }
+
+    [JsonPropertyName("currentPage")]
+    public int CurrentPage { get; set; }
+
+    [JsonPropertyName("totalPages")]
+    public int TotalPages { get; set; }
+
+    [JsonPropertyName("pageList")]
+    public int[] PageList { get; set; }
+
+    [JsonPropertyName("foodSearchCriteria")]
+    public FoodSearchCriteria FoodSearchCriteria { get; set; }
+
+    [JsonPropertyName("foods")]
+    public Food[] Foods { get; set; }
+
+    [JsonPropertyName("aggregations")]
+    public Aggregations Aggregations { get; set; }
 }
 
-public class Foodsearchcriteria
+
+public class FoodSearchCriteria
 {
     public string query { get; set; }
     public string generalSearchInput { get; set; }
