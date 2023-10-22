@@ -178,22 +178,53 @@ public class Food
 
 public class FoodNutrient
 {
-    public int nutrientId { get; set; }
-    public string nutrientName { get; set; }
-    public string nutrientNumber { get; set; }
-    public string unitName { get; set; }
-    public string derivationCode { get; set; }
-    public string derivationDescription { get; set; }
-    public int derivationId { get; set; }
-    public float value { get; set; }
-    public int foodNutrientSourceId { get; set; }
-    public string foodNutrientSourceCode { get; set; }
-    public string foodNutrientSourceDescription { get; set; }
-    public int rank { get; set; }
-    public int indentLevel { get; set; }
-    public int foodNutrientId { get; set; }
-    public int percentDailyValue { get; set; }
-    public int dataPoints { get; set; }
+    [JsonPropertyName("nutrientId")]
+    public int NutrientId { get; set; }
+
+    [JsonPropertyName("nutrientName")]
+    public string NutrientName { get; set; }
+
+    [JsonPropertyName("nutrientNumber")]
+    public string NutrientNumber { get; set; }
+
+    [JsonPropertyName("unitName")]
+    public string UnitName { get; set; }
+
+    [JsonPropertyName("derivationCode")]
+    public string DerivationCode { get; set; }
+
+    [JsonPropertyName("derivationDescription")]
+    public string DerivationDescription { get; set; }
+
+    [JsonPropertyName("derivationId")]
+    public int DerivationId { get; set; }
+
+    [JsonPropertyName("value")]
+    public float Value { get; set; }
+
+    [JsonPropertyName("foodNutrientSourceId")]
+    public int FoodNutrientSourceId { get; set; }
+
+    [JsonPropertyName("foodNutrientSourceCode")]
+    public string FoodNutrientSourceCode { get; set; }
+
+    [JsonPropertyName("foodNutrientSourceDescription")]
+    public string FoodNutrientSourceDescription { get; set; }
+
+    [JsonPropertyName("rank")]
+    public int Rank { get; set; }
+
+    [JsonPropertyName("indentLevel")]
+    public int IndentLevel { get; set; }
+
+    [JsonPropertyName("foodNutrientId")]
+    public int FoodNutrientId { get; set; }
+
+    [JsonPropertyName("percentDailyValue")]
+    public int PercentDailyValue { get; set; }
+
+    [JsonPropertyName("dataPoints")]
+    public int DataPoints { get; set; }
 }
 
 public class FinalFoodInputFood
