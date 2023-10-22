@@ -229,15 +229,32 @@ public class FoodNutrient
 
 public class FinalFoodInputFood
 {
-    public string foodDescription { get; set; }
-    public float gramWeight { get; set; }
-    public int id { get; set; }
-    public string portionCode { get; set; }
-    public string portionDescription { get; set; }
-    public string unit { get; set; }
-    public int rank { get; set; }
-    public int srCode { get; set; }
-    public float value { get; set; }
+    [JsonPropertyName("foodDescription")]
+    public string FoodDescription { get; set; }
+
+    [JsonPropertyName("gramWeight")]
+    public float GramWeight { get; set; }
+
+    [JsonPropertyName("id")]
+    public int Id { get; set; }
+
+    [JsonPropertyName("portionCode")]
+    public string PortionCode { get; set; }
+
+    [JsonPropertyName("portionDescription")]
+    public string PortionDescription { get; set; }
+
+    [JsonPropertyName("unit")]
+    public string Unit { get; set; }
+
+    [JsonPropertyName("rank")]
+    public int Rank { get; set; }
+
+    [JsonPropertyName("srCode")]
+    public int SrCode { get; set; }
+
+    [JsonPropertyName("value")]
+    public float Value { get; set; }
 }
 
 public class FoodMeasure
