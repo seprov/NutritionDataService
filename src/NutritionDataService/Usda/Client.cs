@@ -1,5 +1,4 @@
 ﻿using NutritionDataService.Model;
-using NutritionDataService.Usda.Response;
 
 namespace NutritionDataService.Usda
 {
