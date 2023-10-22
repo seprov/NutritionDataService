@@ -49,15 +49,25 @@ public class FoodSearchCriteria
 
 public class Aggregations
 {
-    public Datatype dataType { get; set; }
-    public Nutrients nutrients { get; set; }
+    [JsonPropertyName("dataType")]
+    public DataType DataType { get; set; }
+
+    [JsonPropertyName("nutrients")]
+    public Nutrients Nutrients { get; set; }
 }
 
-public class Datatype
+public class DataType
 {
+    [JsonPropertyName("Branded")]
     public int Branded { get; set; }
+
+    [JsonPropertyName("SurveyFNDDS")]
     public int SurveyFNDDS { get; set; }
+
+    [JsonPropertyName("SRLegacy")]
     public int SRLegacy { get; set; }
+
+    [JsonPropertyName("Foundation")]
     public int Foundation { get; set; }
 }
 
