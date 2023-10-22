@@ -28,12 +28,23 @@ public class RootObject
 
 public class FoodSearchCriteria
 {
-    public string query { get; set; }
-    public string generalSearchInput { get; set; }
-    public int pageNumber { get; set; }
-    public int numberOfResultsPerPage { get; set; }
-    public int pageSize { get; set; }
-    public bool requireAllWords { get; set; }
+    [JsonPropertyName("query")]
+    public string Query { get; set; }
+
+    [JsonPropertyName("generalSearchInput")]
+    public string GeneralSearchInput { get; set; }
+
+    [JsonPropertyName("pageNumber")]
+    public int PageNumber { get; set; }
+
+    [JsonPropertyName("numberOfResultsPerPage")]
+    public int NumberOfResultsPerPage { get; set; }
+
+    [JsonPropertyName("pageSize")]
+    public int PageSize { get; set; }
+
+    [JsonPropertyName("requireAllWords")]
+    public bool RequireAllWords { get; set; }
 }
 
 public class Aggregations
