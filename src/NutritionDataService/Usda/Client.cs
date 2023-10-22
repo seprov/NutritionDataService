@@ -1,4 +1,6 @@
-﻿namespace NutritionDataService.Usda
+﻿using NutritionDataService.Model;
+
+namespace NutritionDataService.Usda
 {
     internal class Client
     {
@@ -11,26 +13,32 @@
             _httpClient = httpClientFactory.CreateClient();
         }
 
-        public async Task<string?> GetNutritionData(string foodName)
+        public async Task<NutritionData> GetNutritionDataAsync(string query)
         {
-            string? jsonString = null;
-            string url = $"{_configuration.BaseUrl}?query={foodName}&api_key={_configuration.ApiKey}";
+            var response = await GetResponseAsync(query);
+            return new NutritionData();
+        }
 
-            HttpResponseMessage response = await _httpClient.GetAsync(url);
+        private async Task<Response.RootObject?> GetResponseAsync(string query)
+        {
+            Response.RootObject? response = null;
+            string url = $"{_configuration.BaseUrl}?query={query}&api_key={_configuration.ApiKey}";
 
-            if (response.IsSuccessStatusCode)
+            HttpResponseMessage httpResponseMessage = await _httpClient.GetAsync(url);
+
+            if (httpResponseMessage.IsSuccessStatusCode)
             {
-                jsonString = await response.Content.ReadAsStringAsync();
+                var responseAsJsonString = await httpResponseMessage.Content.ReadAsStringAsync();
                 //JObject data = JObject.Parse(jsonString);
-                Console.WriteLine(jsonString);
-
+                response = System.Text.Json.JsonSerializer.Deserialize<Response.RootObject>(responseAsJsonString);
+                Console.WriteLine(responseAsJsonString);
             }
             else
             {
-                Console.WriteLine("Error fetching data: " + response.StatusCode);
+                Console.WriteLine("Error fetching data: " + httpResponseMessage.StatusCode);
             }
 
-            return jsonString;
+            return response;
         }
     }
 }

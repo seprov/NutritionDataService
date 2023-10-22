@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Usda.Response;
+namespace NutritionDataService.Usda.Response;
 public class RootObject
 {
     [JsonPropertyName("totalHits")]
@@ -13,26 +13,26 @@ public class RootObject
     public int TotalPages { get; set; }
 
     [JsonPropertyName("pageList")]
-    public int[] PageList { get; set; }
+    public int[]? PageList { get; set; }
 
     [JsonPropertyName("foodSearchCriteria")]
-    public FoodSearchCriteria FoodSearchCriteria { get; set; }
+    public FoodSearchCriteria? FoodSearchCriteria { get; set; }
 
     [JsonPropertyName("foods")]
-    public Food[] Foods { get; set; }
+    public Food[]? Foods { get; set; }
 
     [JsonPropertyName("aggregations")]
-    public Aggregations Aggregations { get; set; }
+    public Aggregations? Aggregations { get; set; }
 }
 
 
 public class FoodSearchCriteria
 {
     [JsonPropertyName("query")]
-    public string Query { get; set; }
+    public string? Query { get; set; }
 
     [JsonPropertyName("generalSearchInput")]
-    public string GeneralSearchInput { get; set; }
+    public string? GeneralSearchInput { get; set; }
 
     [JsonPropertyName("pageNumber")]
     public int PageNumber { get; set; }
@@ -50,10 +50,10 @@ public class FoodSearchCriteria
 public class Aggregations
 {
     [JsonPropertyName("dataType")]
-    public DataType DataType { get; set; }
+    public DataType? DataType { get; set; }
 
     [JsonPropertyName("nutrients")]
-    public Nutrients Nutrients { get; set; }
+    public Nutrients? Nutrients { get; set; }
 }
 
 public class DataType
@@ -81,90 +81,90 @@ public class Food
     public int FdcId { get; set; }
 
     [JsonPropertyName("description")]
-    public string Description { get; set; }
+    public string? Description { get; set; }
 
     [JsonPropertyName("dataType")]
-    public string DataType { get; set; }
+    public string? DataType { get; set; }
 
     [JsonPropertyName("gtinUpc")]
-    public string GtinUpc { get; set; }
+    public string? GtinUpc { get; set; }
 
     [JsonPropertyName("publishedDate")]
-    public string PublishedDate { get; set; }
+    public string? PublishedDate { get; set; }
 
     [JsonPropertyName("brandOwner")]
-    public string BrandOwner { get; set; }
+    public string? BrandOwner { get; set; }
 
     [JsonPropertyName("brandName")]
-    public string BrandName { get; set; }
+    public string? BrandName { get; set; }
 
     [JsonPropertyName("ingredients")]
-    public string Ingredients { get; set; } 
+    public string? Ingredients { get; set; } 
 
     [JsonPropertyName("marketCountry")]
-    public string MarketCountry { get; set; }
+    public string? MarketCountry { get; set; }
 
     [JsonPropertyName("foodCategory")]
-    public string FoodCategory { get; set; }
+    public string? FoodCategory { get; set; }
 
     [JsonPropertyName("modifiedDate")]
-    public string ModifiedDate { get; set; }
+    public string? ModifiedDate { get; set; }
 
     [JsonPropertyName("dataSource")]
-    public string DataSource { get; set; }
+    public string? DataSource { get; set; }
 
     [JsonPropertyName("packageWeight")]
-    public string PackageWeight { get; set; }
+    public string? PackageWeight { get; set; }
 
     [JsonPropertyName("servingSizeUnit")]
-    public string ServingSizeUnit { get; set; }
+    public string? ServingSizeUnit { get; set; }
 
     [JsonPropertyName("servingSize")]
     public float ServingSize { get; set; }
 
     [JsonPropertyName("tradeChannels")]
-    public string[] TradeChannels { get; set; }
+    public string[]? TradeChannels { get; set; }
 
     [JsonPropertyName("allHighlightFields")]
-    public string AllHighlightFields { get; set; }
+    public string? AllHighlightFields { get; set; }
 
     [JsonPropertyName("score")]
     public float Score { get; set; }
 
     [JsonPropertyName("microbes")]
-    public object[] Microbes { get; set; }
+    public object[]? Microbes { get; set; }
     [JsonPropertyName("foodNutrients")]
-    public FoodNutrient[] FoodNutrients { get; set; }
+    public FoodNutrient[]? FoodNutrients { get; set; }
 
     [JsonPropertyName("finalFoodInputFoods")]
-    public FinalFoodInputFood[] FinalFoodInputFoods { get; set; }
+    public FinalFoodInputFood[]? FinalFoodInputFoods { get; set; }
 
     [JsonPropertyName("foodMeasures")]
-    public FoodMeasure[] FoodMeasures { get; set; }
+    public FoodMeasure[]? FoodMeasures { get; set; }
 
     [JsonPropertyName("foodAttributes")]
-    public object[] FoodAttributes { get; set; }
+    public object[]? FoodAttributes { get; set; }
 
     [JsonPropertyName("foodAttributeTypes")]
-    public FoodAttributeType[] FoodAttributeTypes { get; set; }
+    public FoodAttributeType[]? FoodAttributeTypes { get; set; }
 
     [JsonPropertyName("foodVersionIds")]
-    public object[] FoodVersionIds { get; set; }
+    public object[]? FoodVersionIds { get; set; }
 
     [JsonPropertyName("householdServingFullText")]
-    public string HouseholdServingFullText { get; set; }
+    public string? HouseholdServingFullText { get; set; }
 
     [JsonPropertyName("shortDescription")]
-    public string ShortDescription { get; set; }
+    public string? ShortDescription { get; set; }
 
     [JsonPropertyName("subbrandName")]
-    public string SubbrandName { get; set; }
+    public string? SubbrandName { get; set; }
 
     [JsonPropertyName("commonNames")]
-    public string CommonNames { get; set; }
+    public string? CommonNames { get; set; }
 
     [JsonPropertyName("additionalDescriptions")]
-    public string AdditionalDescriptions { get; set; }
+    public string? AdditionalDescriptions { get; set; }
 
     [JsonPropertyName("foodCode")]
     public int FoodCode { get; set; }
@@ -182,19 +182,19 @@ public class FoodNutrient
     public int NutrientId { get; set; }
 
     [JsonPropertyName("nutrientName")]
-    public string NutrientName { get; set; }
+    public string? NutrientName { get; set; }
 
     [JsonPropertyName("nutrientNumber")]
-    public string NutrientNumber { get; set; }
+    public string? NutrientNumber { get; set; }
 
     [JsonPropertyName("unitName")]
-    public string UnitName { get; set; }
+    public string? UnitName { get; set; }
 
     [JsonPropertyName("derivationCode")]
-    public string DerivationCode { get; set; }
+    public string? DerivationCode { get; set; }
 
     [JsonPropertyName("derivationDescription")]
-    public string DerivationDescription { get; set; }
+    public string? DerivationDescription { get; set; }
 
     [JsonPropertyName("derivationId")]
     public int DerivationId { get; set; }
@@ -206,10 +206,10 @@ public class FoodNutrient
     public int FoodNutrientSourceId { get; set; }
 
     [JsonPropertyName("foodNutrientSourceCode")]
-    public string FoodNutrientSourceCode { get; set; }
+    public string? FoodNutrientSourceCode { get; set; }
 
     [JsonPropertyName("foodNutrientSourceDescription")]
-    public string FoodNutrientSourceDescription { get; set; }
+    public string? FoodNutrientSourceDescription { get; set; }
 
     [JsonPropertyName("rank")]
     public int Rank { get; set; }
@@ -230,7 +230,7 @@ public class FoodNutrient
 public class FinalFoodInputFood
 {
     [JsonPropertyName("foodDescription")]
-    public string FoodDescription { get; set; }
+    public string? FoodDescription { get; set; }
 
     [JsonPropertyName("gramWeight")]
     public float GramWeight { get; set; }
@@ -239,13 +239,13 @@ public class FinalFoodInputFood
     public int Id { get; set; }
 
     [JsonPropertyName("portionCode")]
-    public string PortionCode { get; set; }
+    public string? PortionCode { get; set; }
 
     [JsonPropertyName("portionDescription")]
-    public string PortionDescription { get; set; }
+    public string? PortionDescription { get; set; }
 
     [JsonPropertyName("unit")]
-    public string Unit { get; set; }
+    public string? Unit { get; set; }
 
     [JsonPropertyName("rank")]
     public int Rank { get; set; }
@@ -259,7 +259,7 @@ public class FinalFoodInputFood
 
 public class FoodMeasure
 {
-    public string DisseminationText { get; set; }
+    public string? DisseminationText { get; set; }
 
     [JsonPropertyName("gramWeight")]
     public float GramWeight { get; set; }
@@ -268,16 +268,16 @@ public class FoodMeasure
     public int Id { get; set; }
 
     [JsonPropertyName("modifier")]
-    public string Modifier { get; set; }
+    public string? Modifier { get; set; }
 
     [JsonPropertyName("rank")]
     public int Rank { get; set; }
 
     [JsonPropertyName("measureUnitAbbreviation")]
-    public string MeasureUnitAbbreviation { get; set; }
+    public string? MeasureUnitAbbreviation { get; set; }
 
     [JsonPropertyName("measureUnitName")]
-    public string MeasureUnitName { get; set; }
+    public string? MeasureUnitName { get; set; }
 
     [JsonPropertyName("measureUnitId")]
     public int MeasureUnitId { get; set; }
@@ -286,25 +286,25 @@ public class FoodMeasure
 public class FoodAttributeType
 {
     [JsonPropertyName("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     [JsonPropertyName("description")]
-    public string Description { get; set; }
+    public string? Description { get; set; }
 
     [JsonPropertyName("id")]
     public int Id { get; set; }
 
     [JsonPropertyName("foodAttributes")]
-    public FoodAttribute[] FoodAttributes { get; set; }
+    public FoodAttribute[]? FoodAttributes { get; set; }
 }
 
 public class FoodAttribute
 {
     [JsonPropertyName("value")]
-    public string Value { get; set; }
+    public string? Value { get; set; }
 
     [JsonPropertyName("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     [JsonPropertyName("id")]
     public int Id { get; set; }
