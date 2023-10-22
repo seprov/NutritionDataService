@@ -259,28 +259,56 @@ public class FinalFoodInputFood
 
 public class FoodMeasure
 {
-    public string disseminationText { get; set; }
-    public float gramWeight { get; set; }
-    public int id { get; set; }
-    public string modifier { get; set; }
-    public int rank { get; set; }
-    public string measureUnitAbbreviation { get; set; }
-    public string measureUnitName { get; set; }
-    public int measureUnitId { get; set; }
+    public string DisseminationText { get; set; }
+
+    [JsonPropertyName("gramWeight")]
+    public float GramWeight { get; set; }
+
+    [JsonPropertyName("id")]
+    public int Id { get; set; }
+
+    [JsonPropertyName("modifier")]
+    public string Modifier { get; set; }
+
+    [JsonPropertyName("rank")]
+    public int Rank { get; set; }
+
+    [JsonPropertyName("measureUnitAbbreviation")]
+    public string MeasureUnitAbbreviation { get; set; }
+
+    [JsonPropertyName("measureUnitName")]
+    public string MeasureUnitName { get; set; }
+
+    [JsonPropertyName("measureUnitId")]
+    public int MeasureUnitId { get; set; }
 }
 
 public class FoodAttributeType
 {
-    public string name { get; set; }
-    public string description { get; set; }
-    public int id { get; set; }
-    public Foodattribute[] foodAttributes { get; set; }
+    [JsonPropertyName("name")]
+    public string Name { get; set; }
+
+    [JsonPropertyName("description")]
+    public string Description { get; set; }
+
+    [JsonPropertyName("id")]
+    public int Id { get; set; }
+
+    [JsonPropertyName("foodAttributes")]
+    public FoodAttribute[] FoodAttributes { get; set; }
 }
 
-public class Foodattribute
+public class FoodAttribute
 {
-    public string value { get; set; }
-    public string name { get; set; }
-    public int id { get; set; }
-    public int sequenceNumber { get; set; }
+    [JsonPropertyName("value")]
+    public string Value { get; set; }
+
+    [JsonPropertyName("name")]
+    public string Name { get; set; }
+
+    [JsonPropertyName("id")]
+    public int Id { get; set; }
+
+    [JsonPropertyName("sequenceNumber")]
+    public int SequenceNumber { get; set; }
 }
