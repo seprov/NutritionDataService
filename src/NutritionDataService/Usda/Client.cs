@@ -1,4 +1,5 @@
 ﻿using NutritionDataService.Model;
+using NutritionDataService.Usda.Response;
 
 namespace NutritionDataService.Usda
 {
@@ -16,7 +17,36 @@ namespace NutritionDataService.Usda
         public async Task<NutritionData> GetNutritionDataAsync(string query)
         {
             var response = await GetResponseAsync(query);
-            return new NutritionData();
+            ValidateResponse(response);
+            var food = SelectFood(response!);
+            var nutritionData = MapFoodToNutritionData(food);
+            return nutritionData;
+        }
+
+        private NutritionData MapFoodToNutritionData(Food food)
+        {
+            var foodNutrients = food.FoodNutrients!;
+            var nutritionData = new NutritionData
+                (
+                    food.Description,
+                    foodNutrients.Where(x => x.NutrientId == 1008).FirstOrDefault().Value, // energy, kcal
+                    foodNutrients.Where(x => x.NutrientId == 1005).FirstOrDefault().Value, // carb
+                    foodNutrients.Where(x => x.NutrientId == 1004).FirstOrDefault().Value, // fat
+                    foodNutrients.Where(x => x.NutrientId == 1079).FirstOrDefault().Value, // fib
+                    foodNutrients.Where(x => x.NutrientId == 1003).FirstOrDefault().Value  // protein
+                                                                                           // sugar = 2000, ca = 1087, fe = 1089, na = 1093
+                );
+            return nutritionData;
+        }
+
+        private void ValidateResponse(Response.RootObject? response) 
+        { 
+        
+        }
+
+        private Response.Food SelectFood(Response.RootObject response)
+        {
+            return response.Foods![0];
         }
 
         private async Task<Response.RootObject?> GetResponseAsync(string query)

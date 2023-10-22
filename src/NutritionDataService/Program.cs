@@ -8,5 +8,5 @@ Console.WriteLine("Hello, World!");
 var serviceProvider = new Host().ServiceProvider;
 
 var usdaClient = serviceProvider.GetRequiredService<NutritionDataService.Usda.Client>();
-var x = await usdaClient.GetNutritionDataAsync("cheese");
+var x = await usdaClient.GetNutritionDataAsync("milk");
 Console.WriteLine("");
