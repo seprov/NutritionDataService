@@ -1,7 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using Microsoft.Extensions.DependencyInjection;
 using NutritionDataService;
 
 
 Console.WriteLine("Hello, World!");
 
-var host = new Host();
+var serviceProvider = new Host().ServiceProvider;
+
+var usdaClient = serviceProvider.GetRequiredService<NutritionDataService.Usda.Client>();
+
+Console.WriteLine("");
