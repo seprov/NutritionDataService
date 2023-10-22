@@ -25,6 +25,7 @@ namespace NutritionDataService
         private void ConfigureServices(HostBuilderContext context, IServiceCollection services)
         {
             services
+                .AddHttpClient()
                 .AddSingleton(context.Configuration.GetRequiredSection("Usda:ClientConfiguration").Get<Usda.ClientConfiguration>()
                     ?? throw new InvalidOperationException("Failed to get Usda.ClientConfiguration"))
                 .AddSingleton<Usda.Client>()
