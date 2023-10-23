@@ -23,16 +23,16 @@ internal static class FoodNutrientsToNutritionDataMapper
 
     internal static NutritionData MapFoodNutrientsToNutritionData(Food food)
     {
-        var foodNutrients = food.FoodNutrients!;
         var nutritionData = new NutritionData
             (
                 food.Description!,
-                foodNutrients.Where(x => x.NutrientId == (int)MacronutrientIds.Calories).FirstOrDefault()?.Value,
-                foodNutrients.Where(x => x.NutrientId == (int)MacronutrientIds.Carbs).FirstOrDefault()?.Value,
-                foodNutrients.Where(x => x.NutrientId == (int)MacronutrientIds.Fat).FirstOrDefault()?.Value,
-                foodNutrients.Where(x => x.NutrientId == (int)MacronutrientIds.Fiber).FirstOrDefault()?.Value,
-                foodNutrients.Where(x => x.NutrientId == (int)MacronutrientIds.Protein).FirstOrDefault()?.Value
+                food.FoodNutrients!.Where(x => x.NutrientId == (int)MacronutrientIds.Calories).FirstOrDefault()?.Value,
+                food.FoodNutrients.Where(x => x.NutrientId == (int)MacronutrientIds.Carbs).FirstOrDefault()?.Value,
+                food.FoodNutrients.Where(x => x.NutrientId == (int)MacronutrientIds.Fat).FirstOrDefault()?.Value,
+                food.FoodNutrients.Where(x => x.NutrientId == (int)MacronutrientIds.Fiber).FirstOrDefault()?.Value,
+                food.FoodNutrients.Where(x => x.NutrientId == (int)MacronutrientIds.Protein).FirstOrDefault()?.Value
             );
+
         return nutritionData;
     }
 }

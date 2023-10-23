@@ -22,9 +22,9 @@ namespace NutritionDataService.Usda
             return nutritionData;
         }
 
-        private void ValidateResponse(Response.RootObject? response) 
-        { 
-        
+        private void ValidateResponse(Response.RootObject? response)
+        {
+
         }
 
         private Response.Food SelectFood(Response.RootObject response)

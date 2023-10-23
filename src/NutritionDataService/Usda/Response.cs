@@ -99,7 +99,7 @@ public class Food
     public string? BrandName { get; set; }
 
     [JsonPropertyName("ingredients")]
-    public string? Ingredients { get; set; } 
+    public string? Ingredients { get; set; }
 
     [JsonPropertyName("marketCountry")]
     public string? MarketCountry { get; set; }
