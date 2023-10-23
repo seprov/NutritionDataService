@@ -10,7 +10,7 @@ internal static class FoodNutrientsToNutritionDataMapper
     {
         Calories = 1008,
         Carbs = 1005,
-        Fat = 1004,
+        Fat = 1004, //1085?
         Fiber = 1079,
         Protein = 1003,
         #region Unused
@@ -27,11 +27,11 @@ internal static class FoodNutrientsToNutritionDataMapper
         var nutritionData = new NutritionData
             (
                 food.Description!,
-                foodNutrients.Where(x => x.NutrientId == (int)MacronutrientIds.Calories).First().Value,
-                foodNutrients.Where(x => x.NutrientId == (int)MacronutrientIds.Carbs).First().Value,
-                foodNutrients.Where(x => x.NutrientId == (int)MacronutrientIds.Fat).First().Value,
-                foodNutrients.Where(x => x.NutrientId == (int)MacronutrientIds.Fiber).First().Value,
-                foodNutrients.Where(x => x.NutrientId == (int)MacronutrientIds.Protein).First().Value
+                foodNutrients.Where(x => x.NutrientId == (int)MacronutrientIds.Calories).FirstOrDefault()?.Value,
+                foodNutrients.Where(x => x.NutrientId == (int)MacronutrientIds.Carbs).FirstOrDefault()?.Value,
+                foodNutrients.Where(x => x.NutrientId == (int)MacronutrientIds.Fat).FirstOrDefault()?.Value,
+                foodNutrients.Where(x => x.NutrientId == (int)MacronutrientIds.Fiber).FirstOrDefault()?.Value,
+                foodNutrients.Where(x => x.NutrientId == (int)MacronutrientIds.Protein).FirstOrDefault()?.Value
             );
         return nutritionData;
     }

@@ -35,7 +35,7 @@ namespace NutritionDataService.Usda
         private async Task<Response.RootObject?> GetResponseAsync(string query)
         {
             Response.RootObject? response = null;
-            string url = $"{_configuration.BaseUrl}?query={query}&api_key={_configuration.ApiKey}";
+            string url = $"{_configuration.BaseUrl}?query={query}&dataType=Foundation&api_key={_configuration.ApiKey}";
 
             HttpResponseMessage httpResponseMessage = await _httpClient.GetAsync(url);
 
