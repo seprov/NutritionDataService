@@ -1,7 +1,7 @@
 resource "aws_ecs_service" "nutritiondataservice_service" {
   name                = "${var.app_name}-service"
   cluster             = aws_ecs_cluster.nutritiondataservice_cluster.id
-  task_definition     = aws_ecs_task_definition.bar.arn
+  task_definition     = aws_ecs_task_definition.nutritiondataservice_task_definition.arn
 }
 
 resource "aws_ecs_cluster" "nutritiondataservice_cluster" {
