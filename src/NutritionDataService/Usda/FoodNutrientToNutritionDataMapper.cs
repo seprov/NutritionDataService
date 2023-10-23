@@ -3,7 +3,6 @@ using NutritionDataService.Usda.Response;
 
 namespace NutritionDataService.Usda;
 
-
 internal static class FoodNutrientsToNutritionDataMapper
 {
     public enum MacronutrientIds
