@@ -32,10 +32,10 @@ namespace NutritionDataService.Usda
             return response.Foods![0];
         }
 
-        private async Task<Response.RootObject?> GetResponseAsync(string query)
+        private async Task<Response.RootObject?> GetResponseAsync(string query, bool filterFoundation = true)
         {
             Response.RootObject? response = null;
-            string url = $"{_configuration.BaseUrl}?query={query}&dataType=Foundation&api_key={_configuration.ApiKey}";
+            string url = $"{_configuration.BaseUrl}?query={query}{(filterFoundation ? "&dataType=Foundation" : null)}&api_key={_configuration.ApiKey}";
 
             HttpResponseMessage httpResponseMessage = await _httpClient.GetAsync(url);
 
